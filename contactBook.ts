@@ -31,3 +31,33 @@ function listContacts(): void {
     );
   });
 }
+
+// Function 3 Find by name:-
+
+function findByName(name: string): Contact[] {
+  const matches = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(name.toLowerCase())
+  );
+
+  console.log(`Found ${matches.length} contact(s) matching "${name}".`);
+  return matches;
+}
+
+
+// Function 4 Remove by Id:-
+
+function removeById(id: number): boolean {
+  const originalLength = contacts.length;
+
+  contacts = contacts.filter(contact => contact.id !== id);
+
+  if (contacts.length < originalLength) {
+    console.log(`Contact with ID ${id} removed.`);
+    return true;
+  }
+
+  console.log(`No contact found with ID ${id}.`);
+  return false;
+}
+
+
