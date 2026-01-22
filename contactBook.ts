@@ -10,14 +10,14 @@ let contacts: Contact[] = [];
 
 // Function 1 Add Contact:
 
-function addContact(contact: Contact): void {
+function addContact(contact: Contact) {
   contacts.push(contact);
   console.log(`contact added: ${contact.name}`);
 }
 
 // Function 2 List Contacts:
 
-function listContacts(): void {
+function listContacts() {
   console.log("\nContact List:");
 
   if (contacts.length === 0) {
@@ -59,5 +59,20 @@ function removeById(id: number): boolean {
   console.log(`No contact found with ID ${id}.`);
   return false;
 }
+
+// Testing code:-
+
+addContact({ id: 1, name: "Priti Saxena", email: "priti@example.com", phone: "123-456-7890" });
+addContact({ id: 2, name: "Sunil Srivastav", email: "sunil@example.com", phone: "234-567-8901" });
+addContact({ id: 3, name: "Harshad Patel", phone: "345-678-9012" });
+
+listContacts();
+findByName("sunil");
+removeById(2);
+listContacts();
+
+
+
+
 
 
